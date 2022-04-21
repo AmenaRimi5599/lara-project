@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
-    /**
+     /**
      * Run the migrations.
      *
      * @return void
@@ -15,11 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->text('name');
+            $table->text('phone')->unique();
+            $table->text('email')->unique();
+            $table->text('password');
+            $table->text('img');
+            $table->text('userType');
             $table->timestamps();
         });
     }
